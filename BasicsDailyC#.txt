@@ -1,0 +1,81 @@
+#-----------------c#,C Sharp------------------
+#basic syntax
+#output to console>>Writeand WriteLine
+comments >>single line comments and multiple line comments syntax for single line comment //[single line comments]  syntax for multiple line commebnt/* double line comments*/
+Variables>>>Syntax type variabelName = value  [type int long,float double ,char string,bool]
+Data Types>> int int , long float double char string bool
+Type Casting >> Implicit casting>> converting  smaller Type to larger Type
+		Explicit Casting>> Converting the Lager Type to Smaller Type 
+		Type Convertion Methods >>Convert.ToBoolean() .ToDouble,.ToString,.ToInt32(int),.ToInt64(long)
+
+	 
+ UserInput>>  we know the syntax to write line >>>Console.WriteLine();
+		Read the from the console is Console.ReadLine();>(But it gives the string )
+		If you want read the other type variabel like >int boolen 
+			Console.WriteLine("Enter your age:");
+			int age = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Your age is: " + age);
+Operater>> 	AriThematic OperaTer(+,-,*,/,%,++,--);
+		Assignment Operater( = ,+=,-= *=,%=, &=,|=,^=, >>=,<<=);
+		ComParison Operater(==,>,<,>=,<=,!=)
+		Logical Operater(&&,||,!) 
+Math function >> Math.Max(value,value);>> returns Maximum value 
+		Math.Min(value,value); >>  Minimum Value in that two value
+		Math.Sqrt(Value); It gives the squareRoot value
+		Math.Abs(value); absolute  positive value
+String 	>> A string Variabel contains acollection of Charecters sourounded by Double quotes
+		Example string fName = "Muragesh" ;
+		Exapmle string lName = "Hipparagi";
+		 String Alpabets  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+			Alpabets.Length;
+			Alpabets.ToUpper();
+			Alpabets.ToLower();\
+	
+	>>String Concatination 
+		>Basic Method +  Note (Numbers Are added And Sting Are Concatenated)
+		string firstName = "Muragesh";
+		string lastName = "Hipparagi";
+		string name = firstName + lastName;
+		Console.WriteLine(name);
+		OutPut//Muragesh Hipparagi
+		>> INbilt method 
+			String.Concat()
+				string firstName = "Muragesh";
+				string lastName = "hipparagi";
+				string name = string.Concat(firstName, lastName);
+				Console.WriteLine(name);
+		>>String InterPolation Method
+		string fName = "Muragesh";
+		string LNmae = "Hiparagi";
+		 string name = $"My full name is: {fName} {LName}";
+		  Console.WriteLine(name);
+
+	>>Access Strings  
+		string nmae = "muragesh";
+		 nmae[0]o/p>> m
+ 		nmae.IndexOf(u);o/p>>1
+
+ boolen dataType  >>bool it gives True or False
+		using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool isCSharpFun = true;
+      bool isFishTasty = false;
+      Console.WriteLine(isCSharpFun);   // Outputs True
+      Console.WriteLine(isFishTasty);   // Outputs False    
+    }
+  }
+}
+
+
+ if else>> codition operater see the basics thats it
+ Switch>> switch (variabel){ case  break default}
+	
+
+
+	
