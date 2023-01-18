@@ -75,6 +75,36 @@ namespace MyApplication
 
  if else>> codition operater see the basics thats it
  Switch>> switch (variabel){ case  break default}
+﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace SampleDataAccessApp
+{
+    //Write a function to join the data of Employee and Dept and display Employees with DeptName from a database using Connected model and call the function in the Main program.
+    class PractiseDemo
+    {
+        const string query = "Select EmpId, EmpName, EmpAddress, EmpSalary, tblDept.DeptName from tblEmployee inner join tblDept on tblEmployee.DeptId = tblDept.DeptId";
+        static readonly string strConnection = ConfigurationManager.ConnectionStrings[1].ConnectionString;
+        static void Main(string[] args)
+        {
+            //displayEmpAndDept();
+        }
+
+        private static void displayEmpAndDept()
+        {
+            var con = new SqlConnection(strConnection);
+            var cmd = new SqlCommand(query, con);
+            con.Open();
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["EmpName"]} from {reader["DeptName"]}");
+            }
+            con.Close();
+        }
+    }
+}
 	
 
 
