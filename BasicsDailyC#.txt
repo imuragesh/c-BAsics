@@ -106,6 +106,144 @@ namespace SampleDataAccessApp
     }
 }
 	
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace LinQExample
+{
+    class Customer
+    {
+        public int CustomeId{ get; set; }
+        public string   CustomerName{ get; set; }
+        public string  CustomerAddress{ get; set; }
+    }
+    interface IWantMethods
+    {
+        void CustomerAdd(Customer data);
+        void CustomerUpdate(Customer data2);
+        void CustomerDelet(int id);
+        void CustomerFind(int id);
+    }
+    class methods : IWantMethods
+    {
+        public static List<Customer> custmerslist = new List<Customer>();
+        public void CustomerAdd(Customer datat)
+        {
+            custmerslist.Add(datat);
+            Console.WriteLine(" Customer Added");
+            Console.Clear();
+        }
+     public   void CustomerDelet(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public void CustomerFind(int id)
+        {
+            for (int i = 0; i < custmerslist.Count; i++)
+            {
+                var data = custmerslist[i];
+                if (id == custmerslist[i].CustomeId)
+                {
+                    Console.WriteLine($" id{data.CustomeId}, name {data.CustomerName}, address{data.CustomerAddress}");
+                    Console.WriteLine(  "done");
+
+                }
+
+            }
+            Console.WriteLine("Wrong Id Enterd");   
+        }
+       public void CustomerUpdate(Customer data2)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+    }
+   class MainUI
+    {
+         public static  void MainFunctionforUIINterFace()
+        {
+            Console.WriteLine("for the add the customer To the List#################>> PRESS 1\n  " +
+                "for the Update the customer n_______________ >>PRESS2\n" +
+                "for the delet the Customer THough The Id++++++++++++++++++>>PRESS 3\n" +
+                "for find the Customer though the ID $$$$$$$$$$$$$$>> PRESS 4\n");
+            Console.WriteLine("Enter teh choice ");
+            int Choice = int.Parse(Console.ReadLine());
+            // Console.WriteLine(Choice);
+            while (true)
+            {
+
+          
+            if (Choice == 1)
+            {
+                AddTheCustomer();
+                    MainFunctionforUIINterFace();
+
+
+            }
+           else if(Choice==2)
+            {
+                UpdateTheCustomer();
+            }
+           else if( Choice==3)
+            {
+                DeletCustomer();
+            }
+           else if( Choice==4)
+            {
+                FindCustomer();
+            }
+            else
+            {
+                Console.Clear();
+            }
+            }
+        }
+    
+        private static void DeletCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void FindCustomer()
+        {
+            Console.WriteLine("enter the id you want to find");
+            int id = int.Parse(Console.ReadLine());
+            methods all = new methods();
+            all.CustomerFind(id);
+        }
+
+        private static void UpdateTheCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void AddTheCustomer()
+        {
+            methods all = new methods();
+            Console.WriteLine("Enter the Customr id ");
+            int CustId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Customer Name");
+            string Name = Console.ReadLine();
+            Console.WriteLine("Enter the Address of the Customer");
+            string Address = Console.ReadLine();
+            Customer data =  new Customer {CustomeId =CustId,CustomerName=Name,CustomerAddress=Address };
+            all.CustomerAdd(data);
+            
+           
+        }
+    }
+
+    class CustomerInformation
+    {
+        static void Main(string[] args)
+        {
+            MainUI.MainFunctionforUIINterFace();
+         }      
+    }
+}
 
 	
